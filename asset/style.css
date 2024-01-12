@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-color: bisque;
+}
+
+main {
+    margin: 15px;
+}
+
+.cityInput {
+    width: 240px;
+    margin: 5px;
+    padding: 6px;
+    box-shadow: 1px 1px 8px black;
+}
+
+h1,
+h2,
+h3,
+h6 {
+    margin: 5px;
+    text-shadow: 1px 1px 5px gold;
+    text-align: center;
+}
+
+h3 {
+    text-align: left;
+}
+
+h6 {
+    font-size: medium;
+}
+
+.search-btn {
+    width: 240px;
+    margin: 8px;
+    box-shadow: 1px 1px black;
+    padding: 4px;
+    color: black;
+   
+}
+
+hr {
+    margin: 5px;
+    width: 30%;
+}
+
+.section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.city-btn {
+    display: block;
+    align-items: center;
+    margin: 10px;
+    width: 240px;
+    padding: 6px;
+    color: purple;
+    text-align: center;
+    background-color: gold;
+    box-shadow: 3px 3px 5px purple;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.section {
+    width: 75%;
+    box-sizing: border-box;
+
+
+}
+
+.sectioncc {
+    border: 1px solid darkgreen;
+    border-radius: 3px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/asset/style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <main>
+        <h3>Search for a City:</h3>
+        <section>
+            <div class="section-container">
+                <div class="section">
+                    <div class="search-container">
+
+                        <!-- City Input Form -->
+                        <form id="cityForm">
+                            <input class="cityInput" placeholder="Enter City" required>
+
+                            <button type="submit" class="search-btn">Search</button>
+                        </form>
+                    </div>
+                    <ul>
+                        <button class="city-btn" id="los angeles">Los Angeles</button>
+                        <button class="city-btn" id="las vegas">Las Vegas</button>
+                        <button class="city-btn" id="miami">Miami</button>
+                        <button class="city-btn" id="new york">New York</button>
+                        <button class="city-btn" id="denver">Denver</button>
+                    </ul>
+                </div>
+
+                <div class="section" id="sectioncc">
+                    <h2>Current City Weather</h2>
+                    <div id="currentWeather">
+                        <!-- Display current weather information here -->
+                    </div>
+                </div>
+
+                <div class="section-container" id="forecast">
+                    <!-- Display forecast information here -->
+                    <div class="forecastDisplay"></div>
+                    <div class="forecastDisplay"></div>
+                    <div class="forecastDisplay"></div>
+                    <div class="forecastDisplay"></div>
+                    <div class="forecastDisplay"></div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+<script src="/asset/script.js"></script>
+</body>
+
+</html>
