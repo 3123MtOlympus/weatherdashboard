@@ -1,59 +1,83 @@
+:root{
+    --background-color1: rgba(240, 248, 255, 0.662);
+    --text-shadow1: 1px 1px 3px grey;
+    --text-shadow2: 1px 3px gold;
+    --box-shadow1: inset 1px 1px 6px;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-  background-color: bisque;
-  font-family: 'Kanit', sans-serif;
+    background-color: bisque;
+    font-family: 'Kanit', sans-serif;
 }
 
 main {
-    margin: 15px;
+    margin: 55px;
 }
 
 .cityInput {
     width: 240px;
     margin: 5px;
     padding: 6px;
-    box-shadow: 1px 1px 8px black;
+    box-shadow: inset 1px 1px 8px gold, 1px 1px 8px purple;
+    text-align: center;
 }
 
 h1,
 h2,
-h3, {
+h3 {
     margin: 5px;
-    text-shadow: 1px 1px 5px gold;
+    text-shadow: var(--text-shadow1);
     text-align: center;
 }
 
 h3 {
     text-align: center;
+    text-shadow: var(--text-shadow2)
 }
 
-h2{
+h2 {
     text-align: center;
-    text-shadow: 1px 1px 3px grey;
+    text-shadow: var(--text-shadow1);
     padding: 5px;
 }
 
 .search-btn {
-    width: 240px;
-    margin: 8px;
-    box-shadow: 1px 1px black;
-    padding: 4px;
-    color: black;
-   
+    display: block;
+    align-items: center;
+    margin: 10px 65px;
+    width: 140px;
+    padding: 6px;
+    color: purple;
+    text-align: center;
+    background-color: aliceblue;
+    box-shadow: 3px 3px 5px purple;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-hr {
-    margin: 5px;
-    width: 30%;
+.search-btn:active {
+    display: block;
+    align-items: center;
+    margin: 10px 65px;
+    width: 140px;
+    padding: 6px;
+    color: purple;
+    text-align: center;
+    background-color: lightslategray;
+    box-shadow: 3px 3px 5px purple;
+    border-radius: 6px;
+    cursor: pointer;
+
 }
 
 .section-container {
     display: flex;
-    justify-content: space-between;
+justify-content: space-between;
     align-items: center;
 }
 
@@ -71,14 +95,51 @@ hr {
     cursor: pointer;
 }
 
+.city-btn:active {
+    display: block;
+    align-items: center;
+    margin: 10px 65px;
+    width: 140px;
+    padding: 6px;
+    color: gold;
+    text-align: center;
+    background-color: purple;
+    box-shadow: 3px 3px 5px gold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 .section {
-    width: 75%;
+
     box-sizing: border-box;
-
-
 }
 
-.sectioncc {
-    border: 1px solid darkgreen;
-    border-radius: 3px;
+#sectioncc {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    border: 2px solid grey;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow1);
+    padding: 55px;
+    width: 75%;
+    background-color: var(--background-color1);
+    ;
 }
+
+#forecast {
+    width: 95%;
+    border: 2px solid grey;
+    padding: 55px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow1);
+    background-color: var(--background-color1);
+}
+
+#currentWeather{
+    display: block;
+    justify-content: center;
+}
+

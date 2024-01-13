@@ -274,7 +274,9 @@ function displayCurrentWeather(data) {
     const temperatureF = (data.main.temp - 273.15) * 9/5 + 32;
 
     currentWeatherContainer.innerHTML =
-            `<h2>${data.name}</h2>
+            `
+            <h2>${data.name}</h2>
+            <h3>TODAY'S WEATHER</h3>
         <img id="currentWeatherIcon" src="${iconUrl}" alt="Weather Icon">
         <h4>Temperature: ${temperatureF.toFixed(2)} °F</h4>
         <h4>Humidity: ${data.main.humidity}%</h4>
@@ -307,7 +309,7 @@ function displayForecast(data) {
         card.innerHTML = `
             <h2>${data.city.name}</h2>
             <img src="${iconUrl}" alt="Weather Icon">
-            <p>Day: ${dayOfWeek}</p>
+            <h3>Day: ${dayOfWeek}</h3>
             <p>Temperature: ${temperatureF.toFixed(2)} °F</p>
             <p>Humidity: ${dailyForecast[0].main.humidity}%</p>
             <p>Wind Speed: ${dailyForecast[0].wind.speed} m/s</p>`;
