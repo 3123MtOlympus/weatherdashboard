@@ -283,27 +283,44 @@ function displayCurrentWeather(data) {
 
 // Function to display 5-day forecast
 function displayForecast(data) {
-    
+
+    // Days of the 5 day forecast
+    const groupedByDate = groupByDate(data.list);
+
+    // Search the DOM with forecast information
     forecastCards.forEach((card, i) => {
-        const iconUrl = `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`;
-        
-        //Convert to Fahrenheit
-        const temperatureF = (data.list[i].main.temp - 273.15) * 9/5 + 32;
+        // Get the forecast for each day
+        const dailyForecast = groupedByDate[i];
 
-        //  // Get the timestamp for the forecast and create a Date object
-        //  const timestamp = data.list[i].dt * 1000; // Convert to milliseconds
-        //  const date = new Date(timestamp);
- 
-        //  // Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
-        //  const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
- 
+        const iconUrl = `https://openweathermap.org/img/wn/${dailyForecast[0].weather[0].icon}.png`;
 
-        //Display 5 Day forecast
-        card.innerHTML =
-        `<h3>${data.list[i].name}</h3>
-        <img src="${iconUrl}" alt="Weather Icon">
-        <p>Temperature: ${temperatureF.toFixed(2)} °F</p>
-        <p>Humidity: ${data.list[i].main.humidity}%</p>
-        <p>Wind Speed: ${data.list[i].wind.speed} m/s</p>`;
+        // Convert Kelvin to Fahrenheit
+        const temperatureF = (dailyForecast[0].main.temp - 273.15) * 9/5 + 32;
+
+        // Get the timestamp for the forecast and create a Date object
+        const timestamp = dailyForecast[0].dt * 1000; // Convert to milliseconds
+        const date = new Date(timestamp);
+
+        // Get the day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+        const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+
+        card.innerHTML = `
+            <h2>${data.city.name}</h2>
+            <img src="${iconUrl}" alt="Weather Icon">
+            <p>Day: ${dayOfWeek}</p>
+            <p>Temperature: ${temperatureF.toFixed(2)} °F</p>
+            <p>Humidity: ${dailyForecast[0].main.humidity}%</p>
+            <p>Wind Speed: ${dailyForecast[0].wind.speed} m/s</p>`;
     });
+}
+
+// Helper function to group forecast data by date
+function groupByDate(list) {
+    const grouped = {};
+    list.forEach(forecast => {
+        const date = new Date(forecast.dt * 1000).toLocaleDateString();
+        grouped[date] = grouped[date] || [];
+        grouped[date].push(forecast);
+    });
+    return Object.values(grouped);
 }
