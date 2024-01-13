@@ -5,6 +5,7 @@
 
 body {
   background-color: bisque;
+  font-family: 'Kanit', sans-serif;
 }
 
 main {
@@ -20,19 +21,20 @@ main {
 
 h1,
 h2,
-h3,
-h6 {
+h3, {
     margin: 5px;
     text-shadow: 1px 1px 5px gold;
     text-align: center;
 }
 
 h3 {
-    text-align: left;
+    text-align: center;
 }
 
-h6 {
-    font-size: medium;
+h2{
+    text-align: center;
+    text-shadow: 1px 1px 3px grey;
+    padding: 5px;
 }
 
 .search-btn {

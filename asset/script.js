@@ -324,3 +324,4 @@ function groupByDate(list) {
     });
     return Object.values(grouped);
 }
+
